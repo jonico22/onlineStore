@@ -20,14 +20,19 @@ const DataRemember = {
         JSON.parse(localStorage.getItem('userRember') as string) : '',
   pass: localStorage.getItem('passRember') ?
         JSON.parse(localStorage.getItem('passRember') as string) : '' }
+
+type FormData = {
+  user: string,
+  pass: string,
+};
 export default function PageLogin(){
 
-  const { register, handleSubmit, formState: { errors }, } = useForm(
+  const { register, handleSubmit, formState: { errors }, } = useForm<FormData>(
     { defaultValues: DataRemember,
       resolver: yupResolver(schema),
       mode: "onChange"
     });
-  const onSubmitFilter = async (data: any) => {
+  const onSubmitFilter = async (data: FormData) => {
     console.log(data)
   };
 

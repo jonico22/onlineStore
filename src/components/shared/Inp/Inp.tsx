@@ -1,5 +1,6 @@
 import { Input } from '@/themes'
 import { ReactNode,MouseEventHandler } from 'react';
+import { Text } from '../Text';
 
 interface Props {
   variant? : string | any,
@@ -19,9 +20,9 @@ export const Inp = ({variant,color,className,label,size,register,errors,
     <>
       <Input label={label} variant={variant} color={color}
        size={size} className={className} {...register(name)}
-      onChange={onChange} type={type}/>
+       onChange={onChange} type={type}  error={ errors[name] && true} />
       {errors[name] && (
-        <span className="message-error">{errors[name].message}</span>
+         <Text variant="small" color="red">{errors[name].message}</Text>
       )}
     </>
   )
