@@ -1,7 +1,7 @@
 import { Checkbox } from '@/themes'
 
 interface Props {
-  label? : string,
+  label? : string | any,
   color?: any,
   className?: string,
 }
