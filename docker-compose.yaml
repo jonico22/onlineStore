@@ -1,6 +1,6 @@
 services:
   storiedb:
-    image: mongo:lastest
+    image: mongo:latest
     container_name: store-database
     ports:
       - 27017:27017

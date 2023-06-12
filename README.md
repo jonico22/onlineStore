@@ -15,3 +15,8 @@ yarn dev
 # or
 pnpm dev
 ```
+
+Para correr localmente, se necesita la base de datos.
+```
+docker-compose up -d
+```
