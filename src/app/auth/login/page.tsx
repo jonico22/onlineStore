@@ -6,24 +6,24 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
 const schema = Yup.object().shape({
-  user: Yup.string()
+  email: Yup.string()
         .required("* Ingresa un correo.")
         .matches(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           "* Ingresa un correo válido."),
-  pass: Yup.string()
+  password: Yup.string()
         .required("* Ingresa una contraseña.")
 });
 
 const DataRemember = {
-  user: localStorage.getItem('userRember') ?
+  email: localStorage.getItem('userRember') ?
         JSON.parse(localStorage.getItem('userRember') as string) : '',
-  pass: localStorage.getItem('passRember') ?
+  password: localStorage.getItem('passRember') ?
         JSON.parse(localStorage.getItem('passRember') as string) : '' }
 
 type FormData = {
-  user: string,
-  pass: string,
+  email: string,
+  password: string,
 };
 export default function PageLogin(){
 
@@ -44,8 +44,8 @@ export default function PageLogin(){
         onSubmit={handleSubmit(onSubmitFilter)}>
           <div className="mb-4 flex flex-col gap-6">
             <Inp size="lg" variant="standard" label="Email"
-              name={'user'} register={register}  errors={errors}/>
-            <Inp variant="standard" name={'pass'} type="password" size="lg" register={register}
+              name={'email'} register={register}  errors={errors}/>
+            <Inp variant="standard" name={'password'} type="password" size="lg" register={register}
               label="Password" errors={errors} />
             <Chk label={(<Text variant="small" color="gray"
                   className="flex items-center font-normal">Recordame</Text>)}/>

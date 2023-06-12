@@ -24,5 +24,6 @@ export async function GET(request: Request) {
       return image.includes('http') ? image : `${ process.env.HOST_NAME}products/${ image }`
   });
 
+
   return NextResponse.json(product)
 }
