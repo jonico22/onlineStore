@@ -20,8 +20,7 @@ export const AuthProvider = ({children}:any) => {
     const [state, dispatch] = useReducer( authReducer, AUTH_INITIAL_STATE );
     const { data, status } = useSession();
 
-    useEffect(() => {
-      if ( status === 'authenticated' ) {
+    useEffect(() => {      if ( status === 'authenticated' ) {
         dispatch({ type: '[Auth] - Login', payload: data?.user as IUser })
       }
     }, [ status, data ])

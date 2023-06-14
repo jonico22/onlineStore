@@ -31,18 +31,13 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
+    jwt: ({ token, user ,account}) => {
+      return { ...token, ...user };
+    },
     session: ({ session, token }) => {
-      session.accessToken = token.accessToken;
-      session.user = token.user as any;
+      session.user = token as any;
       return session;
     },
-    jwt: ({ token,account, user }) => {
 
-      if ( account ) {
-        token.accessToken = account.access_token;
-        token.user = user;
-      }
-      return token;
-    },
   },
 };
