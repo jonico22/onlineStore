@@ -4,6 +4,8 @@ import { Text,Inp,Btn,Chk } from "@/components/shared"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
+import { signIn } from "next-auth/react";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -16,24 +18,35 @@ const schema = Yup.object().shape({
 });
 
 const DataRemember = {
-  email: localStorage.getItem('userRember') ?
-        JSON.parse(localStorage.getItem('userRember') as string) : '',
-  password: localStorage.getItem('passRember') ?
-        JSON.parse(localStorage.getItem('passRember') as string) : '' }
+  email:  '',
+  password: '' }
 
 type FormData = {
   email: string,
   password: string,
 };
 export default function PageLogin(){
-
+  const router = useRouter();
   const { register, handleSubmit, formState: { errors }, } = useForm<FormData>(
     { defaultValues: DataRemember,
       resolver: yupResolver(schema),
       mode: "onChange"
     });
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   const onSubmitFilter = async (data: FormData) => {
-    console.log(data)
+    const {email,password} = data;
+    const res = signIn("credentials", {
+      email,
+      password,
+      callbackUrl,
+    });
+    if (!res?.error) {
+      router.push(callbackUrl);
+    } else {
+      console.log("invalid email or password");
+    }
   };
 
   return (
