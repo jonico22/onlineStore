@@ -8,13 +8,10 @@ export async function middleware(req: NextRequest) {
     const session: any = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
     const requestedPage = req.nextUrl.pathname;
     const validRoles = ['admin', 'owner'];
-    console.log(session)
     if( !session ){
         const url = req.nextUrl.clone();
-
         url.pathname = `/auth/login`;
         url.search = `p=${ requestedPage }`;
-
         if( requestedPage.includes('/api') ){
           return new Response( JSON.stringify({ message: 'No autorizado' }),{
             status: 401,

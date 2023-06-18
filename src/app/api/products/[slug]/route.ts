@@ -23,7 +23,5 @@ export async function GET(request: Request) {
   product.images = product.images.map( image => {
       return image.includes('http') ? image : `${ process.env.HOST_NAME}products/${ image }`
   });
-
-
   return NextResponse.json(product)
 }

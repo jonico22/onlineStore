@@ -1,7 +1,7 @@
 import { Layout } from "@/components/auth"
 import { Text } from "@/components/shared"
 import { Form } from "./Form"
-export default async  function PageLogin(){
+export default function PageLogin(){
   return (
     <>
       <Layout >
