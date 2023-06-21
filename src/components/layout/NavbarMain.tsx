@@ -2,7 +2,7 @@
 import { Text } from "@/components/shared"
 import { AuthContext } from '@/context';
 import {  useContext, useState } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 import {
   PowerIcon,
   UserCircleIcon

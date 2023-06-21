@@ -4,7 +4,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return <section>
-    layout admin
+    layout dashboard
     {children}
     </section>
 }
