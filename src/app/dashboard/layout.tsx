@@ -1,10 +1,12 @@
+import {DropdownProfile} from "@/components/shared"
+
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return <section>
-    layout dashboard
-    {children}
+      <DropdownProfile />
+      {children}
     </section>
 }
