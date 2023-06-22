@@ -70,7 +70,7 @@ export function DropdownNotifications({
             <li className="border-b border-slate-200 dark:border-slate-700 last:border-0">
               <Link
                 className="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700/20"
-                to="#0"
+                href="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <span className="block text-sm mb-2">📣 <span className="font-medium text-slate-800 dark:text-slate-100">Edit your information in a swipe</span> Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</span>
@@ -80,7 +80,7 @@ export function DropdownNotifications({
             <li className="border-b border-slate-200 dark:border-slate-700 last:border-0">
               <Link
                 className="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700/20"
-                to="#0"
+                href="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <span className="block text-sm mb-2">📣 <span className="font-medium text-slate-800 dark:text-slate-100">Edit your information in a swipe</span> Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</span>
@@ -90,7 +90,7 @@ export function DropdownNotifications({
             <li className="border-b border-slate-200 dark:border-slate-700 last:border-0">
               <Link
                 className="block py-2 px-4 hover:bg-slate-50 dark:hover:bg-slate-700/20"
-                to="#0"
+                href="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 <span className="block text-sm mb-2">🚀<span className="font-medium text-slate-800 dark:text-slate-100">Say goodbye to paper receipts!</span> Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</span>
