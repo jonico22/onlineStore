@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {SidebarLinkGroup} from './SidebarLinkGroup';
 
-function Sidebar({ sidebarOpen, setSidebarOpen }) {
+export function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
   const trigger = useRef(null);
   const sidebar = useRef(null);

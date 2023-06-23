@@ -1,8 +1,8 @@
 "use client";
 import './globals.css'
-import {ThemeProvider} from '@/themes'
 import { SessionProvider } from "next-auth/react";
-import { AuthProvider } from '@/context';
+import { AuthProvider,ThemeProvider } from '@/context';
+
 
 export const metadata = {
   title: 'Create Next App',
