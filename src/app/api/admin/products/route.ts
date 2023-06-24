@@ -83,7 +83,6 @@ export async function PUT(request: Request) {
       }
 
       // TODO: eliminar fotos en Cloudinary
-      // https://res.cloudinary.com/cursos-udemy/image/upload/v1645914028/nct31gbly4kde6cncc6i.jpg
       product.images.forEach( async(image) => {
           if ( !images.includes(image) ){
               // Borrar de cloudinary

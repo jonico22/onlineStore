@@ -1,4 +1,4 @@
-import { Input } from '@/themes'
+import { Textarea } from '@/themes'
 import { MouseEventHandler } from 'react';
 import { Text } from '../Text';
 
@@ -12,13 +12,14 @@ interface Props {
   className?: string,
   register?:any,
   errors?:any,
+  rows?:any,
   onChange?: MouseEventHandler | any,
 }
-export const Inp = ({variant,color,className,label,size,register,errors,
-  type,onChange,name}:Props)=>{
+export const TxtArea = ({variant,color,className,label,size,register,errors,
+  type,onChange,name,rows=4}:Props)=>{
   return (
     <>
-      <Input label={label} variant={variant} color={color}
+      <Textarea label={label} variant={variant} color={color} rows={rows}
        size={size} className={className} {...register(name)}
        onChange={onChange} type={type}  error={ errors[name] && true} />
       {errors[name] && (
